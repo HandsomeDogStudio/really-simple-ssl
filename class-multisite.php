@@ -81,7 +81,9 @@ if (!class_exists('rsssl_multisite')) {
 
         public function maybe_activate_ssl_in_new_blog($blog_id, $user_id, $domain, $path, $site_id, $meta)
         {
+            error_log('running maybe_ctivate_ssl_in_new_blog');
             if ($this->ssl_enabled_networkwide) {
+                error_log("get blog details for blog_id $blog_id to activate ssl for");
                 $site = get_blog_details($blog_id);
                 $this->switch_to_blog_bw_compatible($site);
                 RSSSL()->really_simple_ssl->activate_ssl();

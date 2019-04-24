@@ -339,6 +339,7 @@ class rsssl_admin extends rsssl_front_end
 
     public function activate_ssl()
     {
+
         $this->ssl_enabled = true;
         $this->wp_redirect = true;
 
